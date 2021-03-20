@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Horde_model</name>
+ <channel>pear.horde.org</channel>
+ <summary>Short headline for model</summary>
+ <description>Long, detailed description of model which may span multiple lines</description>
+ <lead>
+  <name>Horde LLC</name>
+  <user>tbd</user>
+  <email>dev@horde.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2021-03-20</date>
+ <version>
+  <release>1.0.0alpha1</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.horde.org/licenses/lgpl21">LGP-2.1</license>
+ <notes>
+* Initialize Module
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <dir name="doc">
+    <dir name="Horde">
+     <dir name="Model">
+      <file name="COPYING" role="doc" />
+     </dir> <!-- /doc/Horde/Model -->
+     <dir name="model">
+      <file name="CHANGES" role="doc" />
+     </dir> <!-- /doc/Horde/model -->
+    </dir> <!-- /doc/Horde -->
+   </dir> <!-- /doc -->
+   <dir name="lib">
+    <dir name="Horde">
+     <dir name="Core">
+      <dir name="Form">
+       <dir name="Renderer">
+        <file name="Html.php" role="php" />
+       </dir> <!-- /lib/Horde/Core/Form/Renderer -->
+       <dir name="Type">
+        <dir name="Phone">
+         <file name="Mobile.php" role="php" />
+        </dir> <!-- /lib/Horde/Core/Form/Type/Phone -->
+        <file name="Boolean.php" role="php" />
+        <file name="Color.php" role="php" />
+        <file name="CreditCard.php" role="php" />
+        <file name="Date.php" role="php" />
+        <file name="DateTime.php" role="php" />
+        <file name="Email.php" role="php" />
+        <file name="EmailConfirm.php" role="php" />
+        <file name="Enum.php" role="php" />
+        <file name="Int.php" role="php" />
+        <file name="Invalid.php" role="php" />
+        <file name="KeyvalMultiEnum.php" role="php" />
+        <file name="MultiEnum.php" role="php" />
+        <file name="Number.php" role="php" />
+        <file name="Octal.php" role="php" />
+        <file name="Password.php" role="php" />
+        <file name="PasswordConfirm.php" role="php" />
+        <file name="Phone.php" role="php" />
+        <file name="Set.php" role="php" />
+        <file name="String.php" role="php" />
+        <file name="Time.php" role="php" />
+       </dir> <!-- /lib/Horde/Core/Form/Type -->
+       <file name="daterendererchanges.php" role="php" />
+       <file name="Renderer.php" role="php" />
+       <file name="Type.php" role="php" />
+       <file name="Variable.php" role="php" />
+      </dir> <!-- /lib/Horde/Core/Form -->
+      <file name="Form.php" role="php" />
+     </dir> <!-- /lib/Horde/Core -->
+     <dir name="Form">
+      <dir name="VarRenderer">
+       <file name="Xhtml.php" role="php" />
+      </dir> <!-- /lib/Horde/Form/VarRenderer -->
+      <file name="VarRenderer.php" role="php" />
+     </dir> <!-- /lib/Horde/Form -->
+     <dir name="Model">
+      <file name="Translation.php" role="php">
+       <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
+      </file>
+     </dir> <!-- /lib/Horde/Model -->
+    </dir> <!-- /lib/Horde -->
+   </dir> <!-- /lib -->
+   <dir name="locale">
+    <dir name="ar">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/ar/LC_MESSAGES -->
+    </dir> <!-- /locale/ar -->
+    <dir name="bg">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/bg/LC_MESSAGES -->
+    </dir> <!-- /locale/bg -->
+    <dir name="bs">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/bs/LC_MESSAGES -->
+    </dir> <!-- /locale/bs -->
+    <dir name="ca">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/ca/LC_MESSAGES -->
+    </dir> <!-- /locale/ca -->
+    <dir name="cs">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/cs/LC_MESSAGES -->
+    </dir> <!-- /locale/cs -->
+    <dir name="da">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/da/LC_MESSAGES -->
+    </dir> <!-- /locale/da -->
+    <dir name="de">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/de/LC_MESSAGES -->
+    </dir> <!-- /locale/de -->
+    <dir name="el">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/el/LC_MESSAGES -->
+    </dir> <!-- /locale/el -->
+    <dir name="es">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/es/LC_MESSAGES -->
+    </dir> <!-- /locale/es -->
+    <dir name="et">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/et/LC_MESSAGES -->
+    </dir> <!-- /locale/et -->
+    <dir name="eu">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/eu/LC_MESSAGES -->
+    </dir> <!-- /locale/eu -->
+    <dir name="fa">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/fa/LC_MESSAGES -->
+    </dir> <!-- /locale/fa -->
+    <dir name="fi">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/fi/LC_MESSAGES -->
+    </dir> <!-- /locale/fi -->
+    <dir name="fr">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/fr/LC_MESSAGES -->
+    </dir> <!-- /locale/fr -->
+    <dir name="gl">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/gl/LC_MESSAGES -->
+    </dir> <!-- /locale/gl -->
+    <dir name="he">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/he/LC_MESSAGES -->
+    </dir> <!-- /locale/he -->
+    <dir name="hr">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/hr/LC_MESSAGES -->
+    </dir> <!-- /locale/hr -->
+    <dir name="hu">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/hu/LC_MESSAGES -->
+    </dir> <!-- /locale/hu -->
+    <dir name="id">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/id/LC_MESSAGES -->
+    </dir> <!-- /locale/id -->
+    <dir name="is">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/is/LC_MESSAGES -->
+    </dir> <!-- /locale/is -->
+    <dir name="it">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/it/LC_MESSAGES -->
+    </dir> <!-- /locale/it -->
+    <dir name="ja">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/ja/LC_MESSAGES -->
+    </dir> <!-- /locale/ja -->
+    <dir name="km">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/km/LC_MESSAGES -->
+    </dir> <!-- /locale/km -->
+    <dir name="ko">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/ko/LC_MESSAGES -->
+    </dir> <!-- /locale/ko -->
+    <dir name="lt">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/lt/LC_MESSAGES -->
+    </dir> <!-- /locale/lt -->
+    <dir name="lv">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/lv/LC_MESSAGES -->
+    </dir> <!-- /locale/lv -->
+    <dir name="mk">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/mk/LC_MESSAGES -->
+    </dir> <!-- /locale/mk -->
+    <dir name="nb">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/nb/LC_MESSAGES -->
+    </dir> <!-- /locale/nb -->
+    <dir name="nl">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/nl/LC_MESSAGES -->
+    </dir> <!-- /locale/nl -->
+    <dir name="nn">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/nn/LC_MESSAGES -->
+    </dir> <!-- /locale/nn -->
+    <dir name="pl">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/pl/LC_MESSAGES -->
+    </dir> <!-- /locale/pl -->
+    <dir name="pt">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/pt/LC_MESSAGES -->
+    </dir> <!-- /locale/pt -->
+    <dir name="pt_BR">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/pt_BR/LC_MESSAGES -->
+    </dir> <!-- /locale/pt_BR -->
+    <dir name="ro">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/ro/LC_MESSAGES -->
+    </dir> <!-- /locale/ro -->
+    <dir name="ru">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/ru/LC_MESSAGES -->
+    </dir> <!-- /locale/ru -->
+    <dir name="sk">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/sk/LC_MESSAGES -->
+    </dir> <!-- /locale/sk -->
+    <dir name="sl">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/sl/LC_MESSAGES -->
+    </dir> <!-- /locale/sl -->
+    <dir name="sv">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/sv/LC_MESSAGES -->
+    </dir> <!-- /locale/sv -->
+    <dir name="tr">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/tr/LC_MESSAGES -->
+    </dir> <!-- /locale/tr -->
+    <dir name="uk">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/uk/LC_MESSAGES -->
+    </dir> <!-- /locale/uk -->
+    <dir name="zh_CN">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/zh_CN/LC_MESSAGES -->
+    </dir> <!-- /locale/zh_CN -->
+    <dir name="zh_TW">
+     <dir name="LC_MESSAGES">
+      <file name="Horde_Model.mo" role="data" />
+      <file name="Horde_Model.po" role="data" />
+     </dir> <!-- /locale/zh_TW/LC_MESSAGES -->
+    </dir> <!-- /locale/zh_TW -->
+    <file name="Horde_Model.pot" role="data" />
+   </dir> <!-- /locale -->
+   <dir name="www">
+    <file name=".htaccess" role="php" />
+    <file name="test.php" role="php" />
+   </dir> <!-- /www -->
+   <file name="notes.txt" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.3.0</min>
+    <max>8.0.0alpha1</max>
+    <exclude>8.0.0alpha1</exclude>
+   </php>
+   <pearinstaller>
+    <min>1.7.0</min>
+   </pearinstaller>
+   <package>
+    <name>Horde_Exception</name>
+    <channel>pear.horde.org</channel>
+    <min>2.0.0</min>
+    <max>3.0.0alpha1</max>
+    <exclude>3.0.0alpha1</exclude>
+   </package>
+  </required>
+  <optional>
+   <package>
+    <name>Horde_Test</name>
+    <channel>pear.horde.org</channel>
+    <min>2.1.0</min>
+    <max>3.0.0alpha1</max>
+    <exclude>3.0.0alpha1</exclude>
+   </package>
+  </optional>
+ </dependencies>
+ <phprelease>
+  <filelist>
+   <install as="CHANGES" name="doc/Horde/model/CHANGES" />
+   <install as="Model/COPYING" name="doc/Horde/Model/COPYING" />
+   <install as="Horde/Core/Form.php" name="lib/Horde/Core/Form.php" />
+   <install as="Horde/Core/Form/daterendererchanges.php" name="lib/Horde/Core/Form/daterendererchanges.php" />
+   <install as="Horde/Core/Form/Renderer.php" name="lib/Horde/Core/Form/Renderer.php" />
+   <install as="Horde/Core/Form/Renderer/Html.php" name="lib/Horde/Core/Form/Renderer/Html.php" />
+   <install as="Horde/Core/Form/Type.php" name="lib/Horde/Core/Form/Type.php" />
+   <install as="Horde/Core/Form/Type/Boolean.php" name="lib/Horde/Core/Form/Type/Boolean.php" />
+   <install as="Horde/Core/Form/Type/Color.php" name="lib/Horde/Core/Form/Type/Color.php" />
+   <install as="Horde/Core/Form/Type/CreditCard.php" name="lib/Horde/Core/Form/Type/CreditCard.php" />
+   <install as="Horde/Core/Form/Type/Date.php" name="lib/Horde/Core/Form/Type/Date.php" />
+   <install as="Horde/Core/Form/Type/DateTime.php" name="lib/Horde/Core/Form/Type/DateTime.php" />
+   <install as="Horde/Core/Form/Type/Email.php" name="lib/Horde/Core/Form/Type/Email.php" />
+   <install as="Horde/Core/Form/Type/EmailConfirm.php" name="lib/Horde/Core/Form/Type/EmailConfirm.php" />
+   <install as="Horde/Core/Form/Type/Enum.php" name="lib/Horde/Core/Form/Type/Enum.php" />
+   <install as="Horde/Core/Form/Type/Int.php" name="lib/Horde/Core/Form/Type/Int.php" />
+   <install as="Horde/Core/Form/Type/Invalid.php" name="lib/Horde/Core/Form/Type/Invalid.php" />
+   <install as="Horde/Core/Form/Type/KeyvalMultiEnum.php" name="lib/Horde/Core/Form/Type/KeyvalMultiEnum.php" />
+   <install as="Horde/Core/Form/Type/MultiEnum.php" name="lib/Horde/Core/Form/Type/MultiEnum.php" />
+   <install as="Horde/Core/Form/Type/Number.php" name="lib/Horde/Core/Form/Type/Number.php" />
+   <install as="Horde/Core/Form/Type/Octal.php" name="lib/Horde/Core/Form/Type/Octal.php" />
+   <install as="Horde/Core/Form/Type/Password.php" name="lib/Horde/Core/Form/Type/Password.php" />
+   <install as="Horde/Core/Form/Type/PasswordConfirm.php" name="lib/Horde/Core/Form/Type/PasswordConfirm.php" />
+   <install as="Horde/Core/Form/Type/Phone.php" name="lib/Horde/Core/Form/Type/Phone.php" />
+   <install as="Horde/Core/Form/Type/Phone/Mobile.php" name="lib/Horde/Core/Form/Type/Phone/Mobile.php" />
+   <install as="Horde/Core/Form/Type/Set.php" name="lib/Horde/Core/Form/Type/Set.php" />
+   <install as="Horde/Core/Form/Type/String.php" name="lib/Horde/Core/Form/Type/String.php" />
+   <install as="Horde/Core/Form/Type/Time.php" name="lib/Horde/Core/Form/Type/Time.php" />
+   <install as="Horde/Core/Form/Variable.php" name="lib/Horde/Core/Form/Variable.php" />
+   <install as="Horde/Form/VarRenderer.php" name="lib/Horde/Form/VarRenderer.php" />
+   <install as="Horde/Form/VarRenderer/Xhtml.php" name="lib/Horde/Form/VarRenderer/Xhtml.php" />
+   <install as="Horde/Model/Translation.php" name="lib/Horde/Model/Translation.php" />
+   <install as="locale/ar/LC_MESSAGES/Horde_Model.mo" name="locale/ar/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/ar/LC_MESSAGES/Horde_Model.po" name="locale/ar/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/bg/LC_MESSAGES/Horde_Model.mo" name="locale/bg/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/bg/LC_MESSAGES/Horde_Model.po" name="locale/bg/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/bs/LC_MESSAGES/Horde_Model.mo" name="locale/bs/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/bs/LC_MESSAGES/Horde_Model.po" name="locale/bs/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/ca/LC_MESSAGES/Horde_Model.mo" name="locale/ca/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/ca/LC_MESSAGES/Horde_Model.po" name="locale/ca/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/cs/LC_MESSAGES/Horde_Model.mo" name="locale/cs/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/cs/LC_MESSAGES/Horde_Model.po" name="locale/cs/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/da/LC_MESSAGES/Horde_Model.mo" name="locale/da/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/da/LC_MESSAGES/Horde_Model.po" name="locale/da/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/de/LC_MESSAGES/Horde_Model.mo" name="locale/de/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/de/LC_MESSAGES/Horde_Model.po" name="locale/de/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/el/LC_MESSAGES/Horde_Model.mo" name="locale/el/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/el/LC_MESSAGES/Horde_Model.po" name="locale/el/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/es/LC_MESSAGES/Horde_Model.mo" name="locale/es/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/es/LC_MESSAGES/Horde_Model.po" name="locale/es/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/et/LC_MESSAGES/Horde_Model.mo" name="locale/et/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/et/LC_MESSAGES/Horde_Model.po" name="locale/et/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/eu/LC_MESSAGES/Horde_Model.mo" name="locale/eu/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/eu/LC_MESSAGES/Horde_Model.po" name="locale/eu/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/fa/LC_MESSAGES/Horde_Model.mo" name="locale/fa/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/fa/LC_MESSAGES/Horde_Model.po" name="locale/fa/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/fi/LC_MESSAGES/Horde_Model.mo" name="locale/fi/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/fi/LC_MESSAGES/Horde_Model.po" name="locale/fi/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/fr/LC_MESSAGES/Horde_Model.mo" name="locale/fr/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/fr/LC_MESSAGES/Horde_Model.po" name="locale/fr/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/gl/LC_MESSAGES/Horde_Model.mo" name="locale/gl/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/gl/LC_MESSAGES/Horde_Model.po" name="locale/gl/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/he/LC_MESSAGES/Horde_Model.mo" name="locale/he/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/he/LC_MESSAGES/Horde_Model.po" name="locale/he/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/Horde_Model.pot" name="locale/Horde_Model.pot" />
+   <install as="locale/hr/LC_MESSAGES/Horde_Model.mo" name="locale/hr/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/hr/LC_MESSAGES/Horde_Model.po" name="locale/hr/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/hu/LC_MESSAGES/Horde_Model.mo" name="locale/hu/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/hu/LC_MESSAGES/Horde_Model.po" name="locale/hu/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/id/LC_MESSAGES/Horde_Model.mo" name="locale/id/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/id/LC_MESSAGES/Horde_Model.po" name="locale/id/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/is/LC_MESSAGES/Horde_Model.mo" name="locale/is/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/is/LC_MESSAGES/Horde_Model.po" name="locale/is/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/it/LC_MESSAGES/Horde_Model.mo" name="locale/it/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/it/LC_MESSAGES/Horde_Model.po" name="locale/it/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/ja/LC_MESSAGES/Horde_Model.mo" name="locale/ja/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/ja/LC_MESSAGES/Horde_Model.po" name="locale/ja/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/km/LC_MESSAGES/Horde_Model.mo" name="locale/km/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/km/LC_MESSAGES/Horde_Model.po" name="locale/km/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/ko/LC_MESSAGES/Horde_Model.mo" name="locale/ko/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/ko/LC_MESSAGES/Horde_Model.po" name="locale/ko/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/lt/LC_MESSAGES/Horde_Model.mo" name="locale/lt/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/lt/LC_MESSAGES/Horde_Model.po" name="locale/lt/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/lv/LC_MESSAGES/Horde_Model.mo" name="locale/lv/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/lv/LC_MESSAGES/Horde_Model.po" name="locale/lv/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/mk/LC_MESSAGES/Horde_Model.mo" name="locale/mk/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/mk/LC_MESSAGES/Horde_Model.po" name="locale/mk/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/nb/LC_MESSAGES/Horde_Model.mo" name="locale/nb/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/nb/LC_MESSAGES/Horde_Model.po" name="locale/nb/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/nl/LC_MESSAGES/Horde_Model.mo" name="locale/nl/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/nl/LC_MESSAGES/Horde_Model.po" name="locale/nl/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/nn/LC_MESSAGES/Horde_Model.mo" name="locale/nn/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/nn/LC_MESSAGES/Horde_Model.po" name="locale/nn/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/pl/LC_MESSAGES/Horde_Model.mo" name="locale/pl/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/pl/LC_MESSAGES/Horde_Model.po" name="locale/pl/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/pt/LC_MESSAGES/Horde_Model.mo" name="locale/pt/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/pt/LC_MESSAGES/Horde_Model.po" name="locale/pt/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/pt_BR/LC_MESSAGES/Horde_Model.mo" name="locale/pt_BR/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/pt_BR/LC_MESSAGES/Horde_Model.po" name="locale/pt_BR/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/ro/LC_MESSAGES/Horde_Model.mo" name="locale/ro/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/ro/LC_MESSAGES/Horde_Model.po" name="locale/ro/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/ru/LC_MESSAGES/Horde_Model.mo" name="locale/ru/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/ru/LC_MESSAGES/Horde_Model.po" name="locale/ru/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/sk/LC_MESSAGES/Horde_Model.mo" name="locale/sk/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/sk/LC_MESSAGES/Horde_Model.po" name="locale/sk/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/sl/LC_MESSAGES/Horde_Model.mo" name="locale/sl/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/sl/LC_MESSAGES/Horde_Model.po" name="locale/sl/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/sv/LC_MESSAGES/Horde_Model.mo" name="locale/sv/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/sv/LC_MESSAGES/Horde_Model.po" name="locale/sv/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/tr/LC_MESSAGES/Horde_Model.mo" name="locale/tr/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/tr/LC_MESSAGES/Horde_Model.po" name="locale/tr/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/uk/LC_MESSAGES/Horde_Model.mo" name="locale/uk/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/uk/LC_MESSAGES/Horde_Model.po" name="locale/uk/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/zh_CN/LC_MESSAGES/Horde_Model.mo" name="locale/zh_CN/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/zh_CN/LC_MESSAGES/Horde_Model.po" name="locale/zh_CN/LC_MESSAGES/Horde_Model.po" />
+   <install as="locale/zh_TW/LC_MESSAGES/Horde_Model.mo" name="locale/zh_TW/LC_MESSAGES/Horde_Model.mo" />
+   <install as="locale/zh_TW/LC_MESSAGES/Horde_Model.po" name="locale/zh_TW/LC_MESSAGES/Horde_Model.po" />
+   <install as="" name="notes.txt" />
+   <install as=".htaccess" name="www/.htaccess" />
+   <install as="test.php" name="www/test.php" />
+  </filelist>
+ </phprelease>
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.0alpha1</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2021-03-20</date>
+   <license uri="http://www.horde.org/licenses/lgpl21">LGP-2.1</license>
+   <notes>
+* Initialize Module
+   </notes>
+  </release>
+ </changelog>
+</package>

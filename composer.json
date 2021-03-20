@@ -1,0 +1,33 @@
+{
+    "name": "horde/model",
+    "description": "Forms replacement incubator project",
+    "type": "library",
+    "homepage": "http://www.horde.org/libraries/model",
+    "license": "LGP-2.1",
+    "authors": [
+        {
+            "name": "Horde LLC",
+            "email": "dev@horde.org",
+            "role": "lead"
+        }
+    ],
+    "time": "2021-03-20",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com/"
+        }
+    ],
+    "require": {
+        "php": "^7",
+        "horde/exception": "^3"
+    },
+    "suggest": {
+        "horde/test": "^3"
+    },
+    "autoload": {
+        "psr-0": {
+            "Horde_Model": "lib/"
+        }
+    }
+}
