@@ -30,7 +30,7 @@ class Horde_Form_Type_DateTime extends Horde_Form_Type {
         $this->_time->init($show_seconds);
     }
 
-    function isValid($var, $vars, $value, &$message)
+    function isValid($var, $vars, $value, $message)
     {
         if ($var->required) {
             return $this->_date->isValid($var, $vars, $value, $message) &&
@@ -39,7 +39,7 @@ class Horde_Form_Type_DateTime extends Horde_Form_Type {
         return true;
     }
 
-    function getInfo(&$vars, &$var, &$info)
+    function getInfo($vars, $var, $info)
     {
         /* If any component is empty consider it a bad date and return the
          * default. */

@@ -12,7 +12,7 @@ class Horde_Core_Form_Type_Set extends Horde_Core_Form_Type
      */
     protected $_values;
 
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         if (count($this->_values) == 0 || count($value) == 0) {
             return true;

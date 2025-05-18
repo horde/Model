@@ -8,7 +8,7 @@ class Horde_Form_Type_Number extends Horde_Form_Type {
      */
     protected $_fraction;
 
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         if ($var->required && empty($value) && ((string)(double)$value !== $value)) {
             $message = Horde_Model_Translation::t("This field is required.");
@@ -28,7 +28,7 @@ class Horde_Form_Type_Number extends Horde_Form_Type {
 
     /**
      */
-    public function getInfo($vars, $var, &$info)
+    public function getInfo($vars, $var, $info)
     {
         $value = $vars->get($var->name);
         $linfo = Horde_Nls::getLocaleInfo();

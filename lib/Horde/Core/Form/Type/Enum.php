@@ -22,7 +22,7 @@ class Horde_Core_Form_Type_Enum extends Horde_Core_Form_Type
 
     /**
      */
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         if ($var->required && $value == '' && !isset($this->_values[$value])) {
             $message = Horde_Model_Translation::t("This field is required.");

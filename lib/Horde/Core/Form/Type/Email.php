@@ -67,7 +67,7 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
 
     /**
      */
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         // Split into individual addresses.
         $emails = $this->splitEmailAddresses($value);
@@ -280,7 +280,7 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      * @param string &$comment The regexp for comments.
      * @param string &$addr_spec The regexp for email addresses.
      */
-    protected function _defineValidationRegexps(&$comment, &$addr_spec)
+    protected function _defineValidationRegexps($comment, $addr_spec)
     {
         /**
          * NO-WS-CTL       =       %d1-8 /         ; US-ASCII control characters

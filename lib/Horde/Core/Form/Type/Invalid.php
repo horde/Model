@@ -8,7 +8,7 @@ class Horde_Form_Type_invalid extends Horde_Form_Type {
         $this->message = $message;
     }
 
-    function isValid($var, $vars, $value, &$message)
+    function isValid($var, $vars, $value, $message)
     {
         return false;
     }

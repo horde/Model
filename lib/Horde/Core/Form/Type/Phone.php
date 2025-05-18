@@ -4,7 +4,7 @@
  */
 class Horde_Form_Type_Phone extends Horde_Form_Type {
 
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         $valid = true;
 

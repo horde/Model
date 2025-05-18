@@ -4,7 +4,7 @@
  */
 class Horde_Core_Form_Type_Password extends Horde_Core_Form_Type
 {
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         $valid = true;
 

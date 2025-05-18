@@ -397,7 +397,7 @@ class Horde_Core_Form_Variable
      *
      * @return mixed  Depending on the variable type.
      */
-    function getInfo($vars, &$info)
+    function getInfo($vars, $info)
     {
         return $this->type->getInfo($vars, $this, $info);
     }
@@ -436,7 +436,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if the variable validated.
      */
-    function validate($vars, &$message)
+    function validate($vars, $message)
     {
         if ($this->_arrayVal) {
             $vals = $this->getValue($vars);

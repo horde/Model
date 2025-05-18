@@ -20,7 +20,7 @@ class Horde_Core_Form_Type_String extends Horde_Core_Form_Type
      */
     protected $_maxlength;
 
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         $valid = true;
 

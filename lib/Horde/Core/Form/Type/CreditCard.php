@@ -4,7 +4,7 @@
  */
 class Horde_Core_Form_Type_CreditCard extends Horde_Core_Form_Type
 {
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         if (empty($value) && $var->required) {
             $message = Horde_Model_Translation::t("This field is required.");

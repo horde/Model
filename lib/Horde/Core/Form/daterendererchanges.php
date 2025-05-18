@@ -16,13 +16,13 @@ class Horde_Core_Ui_VarRenderer_Html extends Horde_Core_Ui_VarRenderer
 {
     protected $_onLoadJS = array();
 
-    protected function _renderVarInputDefault($form, &$var, &$vars)
+    protected function _renderVarInputDefault($form, $var, $vars)
     {
         return '<strong>Warning:</strong> Unknown variable type ' .
             htmlspecialchars($var->getTypeName());
     }
 
-    protected function _renderVarInput_number($form, &$var, &$vars)
+    protected function _renderVarInput_number($form, $var, $vars)
     {
         $value = $var->getValue($vars);
         if ($var->type->getProperty('fraction')) {
@@ -42,7 +42,7 @@ class Horde_Core_Ui_VarRenderer_Html extends Horde_Core_Ui_VarRenderer
                );
     }
 
-    protected function _renderVarInput_int($form, &$var, &$vars)
+    protected function _renderVarInput_int($form, $var, $vars)
     {
         return sprintf('<input type="number" size="5" name="%s" id="%s" value="%s"%s />',
                        htmlspecialchars($var->getVarName()),
@@ -52,7 +52,7 @@ class Horde_Core_Ui_VarRenderer_Html extends Horde_Core_Ui_VarRenderer
                );
     }
 
-    protected function _renderVarInput_octal($form, &$var, &$vars)
+    protected function _renderVarInput_octal($form, $var, $vars)
     {
         return sprintf('<input type="text" size="5" name="%s" id="%s" value="%s"%s />',
                        htmlspecialchars($var->getVarName()),
@@ -62,7 +62,7 @@ class Horde_Core_Ui_VarRenderer_Html extends Horde_Core_Ui_VarRenderer
                );
     }
 
-    protected function _renderVarInput_intlist($form, &$var, &$vars)
+    protected function _renderVarInput_intlist($form, $var, $vars)
     {
         return sprintf('<input type="text" name="%s" id="%s" value="%s"%s />',
                        htmlspecialchars($var->getVarName()),
@@ -72,7 +72,7 @@ class Horde_Core_Ui_VarRenderer_Html extends Horde_Core_Ui_VarRenderer
                );
     }
 
-    protected function _renderVarInput_text($form, &$var, &$vars)
+    protected function _renderVarInput_text($form, $var, $vars)
     {
         $maxlength = $var->type->getMaxLength();
         return sprintf('<input type="text" name="%s" id="%s" size="%s" value="%s" %s%s%s />',

@@ -902,7 +902,7 @@ EOT;
         }
     }
 
-    function _renderVarDisplay_phone($form, &$var, &$vars)
+    function _renderVarDisplay_phone($form, $var, $vars)
     {
         global $registry;
 
@@ -918,7 +918,7 @@ EOT;
         return $html;
     }
 
-    function _renderVarDisplay_cellphone($form, &$var, &$vars)
+    function _renderVarDisplay_cellphone($form, $var, $vars)
     {
         global $registry;
 

@@ -1,7 +1,7 @@
 <?php
 class Horde_Core_Form_Type_MultiEnum extends Horde_Form_Type_Enum
 {
-    public function isValid($var, $vars, $value, &$message)
+    public function isValid($var, $vars, $value, $message)
     {
         if (is_array($value)) {
             foreach ($value as $val) {

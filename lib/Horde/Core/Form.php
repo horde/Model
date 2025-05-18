@@ -115,7 +115,7 @@ class Horde_Core_Form
             throw new Horde_Exception(sprintf('Nonexistant class "%s" for field type "%s"', $type_class, $type));
         }
         $type_ob = new $type_class();
-        call_user_func_array(array(&$type_ob, 'init'), $params);
+        call_user_func_array(array($type_ob, 'init'), $params);
         return $type_ob;
     }
 
@@ -247,7 +247,7 @@ class Horde_Core_Form
      *
      * @return boolean  True if the variable was found (and deleted).
      */
-    public function removeVariable(&$var)
+    public function removeVariable($var)
     {
         foreach (array_keys($this->_variables) as $section) {
             foreach (array_keys($this->_variables[$section]) as $i) {
@@ -452,7 +452,7 @@ class Horde_Core_Form
      * @param array $info      Array to be filled with the submitted field
      *                         values.
      */
-    public function getInfo(&$info)
+    public function getInfo($info)
     {
         $this->_getInfoFromVariables($this->getVariables(), $info);
         $this->_getInfoFromVariables($this->_hiddenVariables, $info);
@@ -468,7 +468,7 @@ class Horde_Core_Form
      * @param array  $info       The array to be filled with the submitted
      *                           field values.
      */
-    protected function _getInfoFromVariables($variables, &$info)
+    protected function _getInfoFromVariables($variables, $info)
     {
         foreach ($variables as $var) {
             if ($var->isArrayVal()) {

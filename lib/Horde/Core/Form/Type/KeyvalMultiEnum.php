@@ -1,7 +1,7 @@
 <?php
 class Horde_Core_Form_Type_KeyvalMultiEnum extends Horde_Core_Form_Type_MultiEnum
 {
-    public function getInfo($vars, $var, &$info)
+    public function getInfo($vars, $var, $info)
     {
         $value = $vars->get($var->name);
         $info = array();

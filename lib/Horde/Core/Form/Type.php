@@ -32,11 +32,11 @@ abstract class Horde_Core_Form_Type
 
     /**
      */
-    abstract public function isValid($var, $vars, $value, &$message);
+    abstract public function isValid($var, $vars, $value, $message);
 
     /**
      */
-    function getInfo($vars, $var, &$info)
+    function getInfo($vars, $var, $info)
     {
         $info = $var->getValue($vars);
     }
