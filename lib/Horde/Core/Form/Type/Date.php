@@ -61,7 +61,7 @@ class Horde_Core_Form_Type_Date extends Horde_Core_Form_Type
             $format = $this->_format;
         }
         if (!empty($timestamp)) {
-            return strftime($format, $timestamp) . ($showago ? self::getAgo($timestamp) : '');
+            return \Horde\Date\Format::formatDate($timestamp, $format, $GLOBALS['language'] ?? 'en_US') . ($showago ? self::getAgo($timestamp) : '');
         } else {
             return '';
         }
