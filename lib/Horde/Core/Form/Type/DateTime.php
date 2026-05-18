@@ -57,7 +57,7 @@ class Horde_Form_Type_DateTime extends Horde_Form_Type {
         if (is_null($this->format_in)) {
             $info = $date->timestamp();
         } else {
-            $info = $date->strftime($this->format_in);
+            $info = $date->format($this->format_in, new \Horde\Date\Formatter\IcuFormatter(), $GLOBALS['language'] ?? 'en_US');
         }
     }
 
