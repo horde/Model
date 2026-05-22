@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Date and time selection
  */
-class Horde_Form_Type_DateTime extends Horde_Form_Type {
-
-    var $_date;
-    var $_time;
+class Horde_Form_Type_DateTime extends Horde_Form_Type
+{
+    public $_date;
+    public $_time;
 
     /**
      * Return the date supplied as a Horde_Date object.
@@ -20,9 +21,14 @@ class Horde_Form_Type_DateTime extends Horde_Form_Type {
      *                             date. Similar to the strftime() function.
      * @param boolean $show_seconds Include a form input for seconds.
      */
-    function init($start_year = '', $end_year = '', $picker = true,
-                  $format_in = null, $format_out = '%x', $show_seconds = false)
-    {
+    public function init(
+        $start_year = '',
+        $end_year = '',
+        $picker = true,
+        $format_in = null,
+        $format_out = '%x',
+        $show_seconds = false
+    ) {
         $this->_date = new Horde_Form_Type_Date();
         $this->_date->init($start_year, $end_year, $picker, $format_in, $format_out);
 
@@ -30,16 +36,16 @@ class Horde_Form_Type_DateTime extends Horde_Form_Type {
         $this->_time->init($show_seconds);
     }
 
-    function isValid($var, $vars, $value, $message)
+    public function isValid($var, $vars, $value, $message)
     {
         if ($var->required) {
-            return $this->_date->isValid($var, $vars, $value, $message) &&
-                $this->_time->isValid($var, $vars, $value, $message);
+            return $this->_date->isValid($var, $vars, $value, $message)
+                && $this->_time->isValid($var, $vars, $value, $message);
         }
         return true;
     }
 
-    function getInfo($vars, $var, $info)
+    public function getInfo($vars, $var, $info)
     {
         /* If any component is empty consider it a bad date and return the
          * default. */
@@ -57,11 +63,11 @@ class Horde_Form_Type_DateTime extends Horde_Form_Type {
         if (is_null($this->format_in)) {
             $info = $date->timestamp();
         } else {
-            $info = $date->format($this->format_in, new \Horde\Date\Formatter\IcuFormatter(), $GLOBALS['language'] ?? 'en_US');
+            $info = $date->format($this->format_in, new Horde\Date\Formatter\IcuFormatter(), $GLOBALS['language'] ?? 'en_US');
         }
     }
 
-    function __get($property)
+    public function __get($property)
     {
         if ($property == 'show_seconds') {
             return $this->_time->$property;
@@ -70,7 +76,7 @@ class Horde_Form_Type_DateTime extends Horde_Form_Type {
         }
     }
 
-    function __set($property, $value)
+    public function __set($property, $value)
     {
         if ($property == 'show_seconds') {
             $this->_time->$property = $value;
@@ -79,42 +85,42 @@ class Horde_Form_Type_DateTime extends Horde_Form_Type {
         }
     }
 
-    function checktime($hour, $minute, $second)
+    public function checktime($hour, $minute, $second)
     {
         return $this->_time->checktime($hour, $minute, $second);
     }
 
-    function getTimeOb($time_in)
+    public function getTimeOb($time_in)
     {
         return $this->_time->getTimeOb($time_in);
     }
 
-    function getTimeParts($time_in)
+    public function getTimeParts($time_in)
     {
         return $this->_time->getTimeParts($time_in);
     }
 
-    function emptyTimeArray($time)
+    public function emptyTimeArray($time)
     {
         return $this->_time->emptyTimeArray($time);
     }
 
-    function emptyDateArray($date)
+    public function emptyDateArray($date)
     {
         return $this->_date->emptyDateArray($date);
     }
 
-    function getDateParts($date_in)
+    public function getDateParts($date_in)
     {
         return $this->_date->getDateParts($date_in);
     }
 
-    function getDateOb($date_in)
+    public function getDateOb($date_in)
     {
         return $this->_date->getDateOb($date_in);
     }
 
-    function formatDate($date)
+    public function formatDate($date)
     {
         if ($date === null) {
             return '';

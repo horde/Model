@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Email
  */
@@ -10,7 +11,7 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      * @type boolean
      * @var boolean
     */
-    var $_allow_multi = false;
+    public $_allow_multi = false;
 
     /**
      * Strip domain from the address?
@@ -18,7 +19,7 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      * @type boolean
      * @var boolean
      */
-    var $_strip_domain = false;
+    public $_strip_domain = false;
 
     /**
      * Make displayed email addresses clickable?
@@ -26,7 +27,7 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      * @type boolean
      * @var boolean
      */
-    var $_link_compose = false;
+    public $_link_compose = false;
 
     /**
      * The compose name to use
@@ -34,7 +35,7 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      * @type text
      * @var boolean
      */
-    var $_link_name;
+    public $_link_name;
 
     /**
      * The character to separate multiple email addresses
@@ -42,7 +43,7 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      * @type text
      * @var string
      */
-    var $_delimiters = ',';
+    public $_delimiters = ',';
 
     /**
      * Contact the target mail server to see if the email address is deliverable?
@@ -50,14 +51,17 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      * @type boolean
      * @var boolean
      */
-    var $_check_smtp = false;
+    public $_check_smtp = false;
 
     /**
      */
-    public function init($allow_multi = false, $strip_domain = false,
-                  $link_compose = false, $link_name = null,
-                  $delimiters = ',')
-    {
+    public function init(
+        $allow_multi = false,
+        $strip_domain = false,
+        $link_compose = false,
+        $link_name = null,
+        $delimiters = ','
+    ) {
         $this->_allow_multi = $allow_multi;
         $this->_strip_domain = $strip_domain;
         $this->_link_compose = $link_compose;
@@ -114,15 +118,15 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      */
     public function splitEmailAddresses($string)
     {
-        $quotes = array('"', "'");
-        $emails = array();
+        $quotes = ['"', "'"];
+        $emails = [];
         $pos = 0;
         $in_quote = null;
         $in_group = false;
         $prev = null;
 
         if (!strlen($string)) {
-            return array();
+            return [];
         }
 
         $char = $string[0];
@@ -153,9 +157,9 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
                 }
             } elseif ($char == ':') {
                 $in_group = true;
-            } elseif (strpos($this->_delimiters, $char) !== false &&
-                      $prev !== '\\' &&
-                      is_null($in_quote)) {
+            } elseif (strpos($this->_delimiters, $char) !== false
+                      && $prev !== '\\'
+                      && is_null($in_quote)) {
                 $emails[] = substr($string, $pos, $i - $pos);
                 $pos = $i + 1;
             }
@@ -198,14 +202,14 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
         // any more).
         while (true) {
             $new = preg_replace("!$comment_regexp!", '', $email);
-            if (strlen($new) == strlen($email)){
+            if (strlen($new) == strlen($email)) {
                 break;
             }
             $email = $new;
         }
 
         // Now match what's left.
-        $result = (bool)preg_match("!^$email_regexp$!", $email);
+        $result = (bool) preg_match("!^$email_regexp$!", $email);
         if ($result && $this->_check_smtp) {
             $result = $this->validateEmailAddressSmtp($email);
         }
@@ -222,11 +226,11 @@ class Horde_Core_Form_Type_Email extends Horde_Core_Form_Type
      */
     public function validateEmailAddressSmtp($email)
     {
-        list(, $maildomain) = explode('@', $email, 2);
+        [, $maildomain] = explode('@', $email, 2);
 
         // Try to get the real mailserver from MX records.
-        if (function_exists('getmxrr') &&
-            @getmxrr($maildomain, $mxhosts, $mxpriorities)) {
+        if (function_exists('getmxrr')
+            && @getmxrr($maildomain, $mxhosts, $mxpriorities)) {
             // MX record found.
             array_multisort($mxpriorities, $mxhosts);
             $mailhost = $mxhosts[0];

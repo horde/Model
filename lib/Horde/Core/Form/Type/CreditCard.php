@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Credit card number
  */
@@ -64,29 +65,29 @@ class Horde_Core_Form_Type_CreditCard extends Horde_Core_Form_Type
         }
 
         // Check for Visa.
-        if ((($l == 16) || ($l == 13)) &&
-            ($ccnum[0] == 4)) {
+        if ((($l == 16) || ($l == 13))
+            && ($ccnum[0] == 4)) {
             return 'visa';
         }
 
         // Check for MasterCard.
-        if (($l == 16) &&
-            ($ccnum[0] == 5) &&
-            ($ccnum[1] >= 1) &&
-            ($ccnum[1] <= 5)) {
+        if (($l == 16)
+            && ($ccnum[0] == 5)
+            && ($ccnum[1] >= 1)
+            && ($ccnum[1] <= 5)) {
             return 'mastercard';
         }
 
         // Check for Amex.
-        if (($l == 15) &&
-            ($ccnum[0] == 3) &&
-            (($ccnum[1] == 4) || ($ccnum[1] == 7))) {
+        if (($l == 15)
+            && ($ccnum[0] == 3)
+            && (($ccnum[1] == 4) || ($ccnum[1] == 7))) {
             return 'amex';
         }
 
         // Check for Discover (Novus).
-        if (strlen($ccnum) == 16 &&
-            substr($ccnum, 0, 4) == '6011') {
+        if (strlen($ccnum) == 16
+            && substr($ccnum, 0, 4) == '6011') {
             return 'discover';
         }
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This class represents a single form variable that may be rendered as one or
  * more form fields.
@@ -13,105 +14,105 @@ class Horde_Core_Form_Variable
      *
      * @var Horde_Core_Form
      */
-    var $form;
+    public $form;
 
     /**
      * A short description of this variable's purpose.
      *
      * @var string
      */
-    var $humanName;
+    public $humanName;
 
     /**
      * The internally used name.
      *
      * @var string
      */
-    var $varName;
+    public $varName;
 
     /**
      * A {@link Horde_Core_Form_Type} instance.
      *
      * @var Horde_Core_Form_Type
      */
-    var $type;
+    public $type;
 
     /**
      * Whether this is a required variable.
      *
      * @var boolean
      */
-    var $required;
+    public $required;
 
     /**
      * Whether this is a readonly variable.
      *
      * @var boolean
      */
-    var $readonly;
+    public $readonly;
 
     /**
      * A long description of the variable's purpose, special instructions, etc.
      *
      * @var string
      */
-    var $description;
+    public $description;
 
     /**
      * The variable help text.
      *
      * @var string
      */
-    var $help;
+    public $help;
 
     /**
      * Whether this is an array variable.
      *
      * @var boolean
      */
-    var $_arrayVal;
+    public $_arrayVal;
 
     /**
      * The default value.
      *
      * @var mixed
      */
-    var $_defValue = null;
+    public $_defValue = null;
 
     /**
      * A {@link Horde_Core_Form_Action} instance.
      *
      * @var Horde_Core_Form_Action
      */
-    var $_action;
+    public $_action;
 
     /**
      * Whether this variable is disabled.
      *
      * @var boolean
      */
-    var $_disabled = false;
+    public $_disabled = false;
 
     /**
      * TODO
      *
      * @var boolean
      */
-    var $_autofilled = false;
+    public $_autofilled = false;
 
     /**
      * Whether this is a hidden variable.
      *
      * @var boolean
      */
-    var $_hidden = false;
+    public $_hidden = false;
 
     /**
      * TODO
      *
      * @var array
      */
-    var $_options = array();
+    public $_options = [];
 
     /**
      * Variable constructor.
@@ -125,9 +126,14 @@ class Horde_Core_Form_Variable
      * @param string $description    A long description of the variable's
      *                               purpose, special instructions, etc.
      */
-    function Horde_Core_Form_Variable($humanName, $varName, $type, $required,
-                                 $readonly = false, $description = null)
-    {
+    public function Horde_Core_Form_Variable(
+        $humanName,
+        $varName,
+        $type,
+        $required,
+        $readonly = false,
+        $description = null
+    ) {
         $this->humanName   = $humanName;
         $this->varName     = $varName;
         $this->type        = $type;
@@ -142,7 +148,7 @@ class Horde_Core_Form_Variable
      *
      * @param Horde_Core_Form $form  The form instance to assign this variable to.
      */
-    function setFormOb($form)
+    public function setFormOb($form)
     {
         $this->form = $form;
     }
@@ -152,7 +158,7 @@ class Horde_Core_Form_Variable
      *
      * @param mixed $value  A variable value.
      */
-    function setDefault($value)
+    public function setDefault($value)
     {
         $this->_defValue = $value;
     }
@@ -162,7 +168,7 @@ class Horde_Core_Form_Variable
      *
      * @return mixed  This variable's default value.
      */
-    function getDefault()
+    public function getDefault()
     {
         return $this->_defValue;
     }
@@ -179,7 +185,7 @@ class Horde_Core_Form_Variable
      *
      * @param Horde_Core_Form_Action $action  A {@link Horde_Core_Form_Action} instance.
      */
-    function setAction($action)
+    public function setAction($action)
     {
         $this->_action = $action;
     }
@@ -189,7 +195,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if this variable has an attached action.
      */
-    function hasAction()
+    public function hasAction()
     {
         return !is_null($this->_action);
     }
@@ -197,7 +203,7 @@ class Horde_Core_Form_Variable
     /**
      * Makes this a hidden variable.
      */
-    function hide()
+    public function hide()
     {
         $this->_hidden = true;
     }
@@ -207,7 +213,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if this a hidden variable.
      */
-    function isHidden()
+    public function isHidden()
     {
         return $this->_hidden;
     }
@@ -215,7 +221,7 @@ class Horde_Core_Form_Variable
     /**
      * Disables this variable.
      */
-    function disable()
+    public function disable()
     {
         $this->_disabled = true;
     }
@@ -225,7 +231,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if this variable is disabled.
      */
-    function isDisabled()
+    public function isDisabled()
     {
         return $this->_disabled;
     }
@@ -235,7 +241,7 @@ class Horde_Core_Form_Variable
      *
      * @return string  A short description
      */
-    function getHumanName()
+    public function getHumanName()
     {
         return $this->humanName;
     }
@@ -245,7 +251,7 @@ class Horde_Core_Form_Variable
      *
      * @return string  This variable's internal name.
      */
-    function getVarName()
+    public function getVarName()
     {
         return $this->varName;
     }
@@ -256,7 +262,7 @@ class Horde_Core_Form_Variable
      * @return Horde_Core_Form_Type  This variable's {@link Horde_Core_Form_Type}
      *                          instance.
      */
-    function getType()
+    public function getType()
     {
         return $this->type;
     }
@@ -266,7 +272,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if this is a required variable.
      */
-    function isRequired()
+    public function isRequired()
     {
         return $this->required;
     }
@@ -276,7 +282,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if this a readonly variable.
      */
-    function isReadonly()
+    public function isReadonly()
     {
         return $this->readonly;
     }
@@ -286,7 +292,7 @@ class Horde_Core_Form_Variable
      *
      * @return array  The possible values of this variable or null.
      */
-    function getValues()
+    public function getValues()
     {
         return $this->type->values;
     }
@@ -296,7 +302,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if this variable has a long description.
      */
-    function hasDescription()
+    public function hasDescription()
     {
         return !empty($this->description);
     }
@@ -306,7 +312,7 @@ class Horde_Core_Form_Variable
      *
      * @return string  This variable's long description.
      */
-    function getDescription()
+    public function getDescription()
     {
         return $this->description;
     }
@@ -316,7 +322,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if this an array variable.
      */
-    function isArrayVal()
+    public function isArrayVal()
     {
         return $this->_arrayVal;
     }
@@ -326,7 +332,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if variable is to upload a file.
      */
-    function isUpload()
+    public function isUpload()
     {
         return ($this->type instanceof Horde_Core_Form_Type_File);
     }
@@ -336,7 +342,7 @@ class Horde_Core_Form_Variable
      *
      * @param string $help  The variable help text.
      */
-    function setHelp($help)
+    public function setHelp($help)
     {
         $this->form->_help = true;
         $this->help = $help;
@@ -347,7 +353,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if this variable has a help text.
      */
-    function hasHelp()
+    public function hasHelp()
     {
         return !empty($this->help);
     }
@@ -357,7 +363,7 @@ class Horde_Core_Form_Variable
      *
      * @return string  This variable's help text.
      */
-    function getHelp()
+    public function getHelp()
     {
         return $this->help;
     }
@@ -368,7 +374,7 @@ class Horde_Core_Form_Variable
      * @param string $option  The option name.
      * @param mixed $val      The option's value.
      */
-    function setOption($option, $val)
+    public function setOption($option, $val)
     {
         $this->_options[$option] = $val;
     }
@@ -380,9 +386,9 @@ class Horde_Core_Form_Variable
      *
      * @return mixed          The option's value.
      */
-    function getOption($option)
+    public function getOption($option)
     {
-        return isset($this->_options[$option]) ? $this->_options[$option] : null;
+        return $this->_options[$option] ?? null;
     }
 
     /**
@@ -397,7 +403,7 @@ class Horde_Core_Form_Variable
      *
      * @return mixed  Depending on the variable type.
      */
-    function getInfo($vars, $info)
+    public function getInfo($vars, $info)
     {
         return $this->type->getInfo($vars, $this, $info);
     }
@@ -413,7 +419,7 @@ class Horde_Core_Form_Variable
      *                  option set or the form wasn't submitted yet. A boolean
      *                  indicating whether the variable was changed otherwise.
      */
-    function wasChanged($vars)
+    public function wasChanged($vars)
     {
         if (!$this->getOption('trackchange')) {
             return null;
@@ -436,7 +442,7 @@ class Horde_Core_Form_Variable
      *
      * @return boolean  True if the variable validated.
      */
-    function validate($vars, $message)
+    public function validate($vars, $message)
     {
         if ($this->_arrayVal) {
             $vals = $this->getValue($vars);
@@ -478,7 +484,7 @@ class Horde_Core_Form_Variable
      *
      * @return mixed  The variable or element value.
      */
-    function getValue($vars, $index = null)
+    public function getValue($vars, $index = null)
     {
         if ($this->_arrayVal) {
             $name = str_replace('[]', '', $this->varName);
@@ -495,7 +501,7 @@ class Horde_Core_Form_Variable
             if (!$wasset && !is_array($value)) {
                 $return = $value;
             } else {
-                $return = isset($value[$index]) ? $value[$index] : null;
+                $return = $value[$index] ?? null;
             }
         } else {
             $return = $value;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Email with confirmation
  */
@@ -20,16 +21,16 @@ class Horde_Core_Form_Type_EmailConfirm extends Horde_Core_Form_Type
         $addr_ob = $rfc822->parseAddressList($value['original']);
 
         switch (count($addr_ob)) {
-        case 0:
-            $message = Horde_Model_Translation::t("You did not enter a valid email address.");
-            return false;
+            case 0:
+                $message = Horde_Model_Translation::t("You did not enter a valid email address.");
+                return false;
 
-        case 1:
-            break;
+            case 1:
+                break;
 
-        default:
-            $message = Horde_Model_Translation::t("Only one email address allowed.");
-            return false;
+            default:
+                $message = Horde_Model_Translation::t("Only one email address allowed.");
+                return false;
         }
 
         return true;

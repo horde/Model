@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Horde_Core_Form_Type Class
  *
@@ -7,16 +8,16 @@
  */
 abstract class Horde_Core_Form_Type
 {
-    protected $_properties = array();
+    protected $_properties = [];
 
     /**
      * Type constructor. Takes a hash of key/value parameters.
      *
      * @param array $properties Any type properties to initialize.
      */
-    public function __construct($properties = array())
+    public function __construct($properties = [])
     {
-        $this->_properties = array();
+        $this->_properties = [];
         $vars = array_keys(get_object_vars($this));
         foreach ($vars as $var) {
             $this->_properties[] = substr($var, 1);
@@ -36,16 +37,14 @@ abstract class Horde_Core_Form_Type
 
     /**
      */
-    function getInfo($vars, $var, $info)
+    public function getInfo($vars, $var, $info)
     {
         $info = $var->getValue($vars);
     }
 
     /**
      */
-    public function onSubmit()
-    {
-    }
+    public function onSubmit() {}
 
     /**
      * To get the 'escape' property of a type:

@@ -1,12 +1,13 @@
 <?php
+
 /**
  * Horde_Core_Form Master Class.
  *
  * The Horde_Core_Form:: package provides form rendering, validation, and other
  * functionality for the Horde Application Framework.
  *
- * Copyright 2001-2007 Robert E. Coyle <robertecoyle@hotmail.com>
- * Copyright 2001-2017 Horde LLC (http://www.horde.org/)
+ * Copyright 2001-2026 Robert E. Coyle <robertecoyle@hotmail.com>
+ * Copyright 2001-2026 Horde LLC (http://www.horde.org/)
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -20,13 +21,13 @@ class Horde_Core_Form
     protected $_name = '';
     protected $_title = '';
     protected $_vars;
-    protected $_errors = array();
+    protected $_errors = [];
     protected $_submitted = null;
-    protected $_sections = array();
+    protected $_sections = [];
     protected $_open_section = null;
-    protected $_currentSection = array();
-    protected $_variables = array();
-    protected $_hiddenVariables = array();
+    protected $_currentSection = [];
+    protected $_variables = [];
+    protected $_hiddenVariables = [];
     protected $_useFormToken = true;
     protected $_autofilled = false;
     protected $_help = false;
@@ -103,19 +104,19 @@ class Horde_Core_Form
      *
      * @return object Horde_Core_Form_Renderer  The form renderer.
      */
-    function getRenderer($params = array())
+    public function getRenderer($params = [])
     {
         return new Horde_Core_Form_Renderer_Xhtml($params);
     }
 
-    function getType($type, $params = array())
+    public function getType($type, $params = [])
     {
         $type_class = 'Horde_Core_Form_Type_' . $type;
         if (!class_exists($type_class)) {
             throw new Horde_Exception(sprintf('Nonexistant class "%s" for field type "%s"', $type_class, $type));
         }
         $type_ob = new $type_class();
-        call_user_func_array(array($type_ob, 'init'), $params);
+        call_user_func_array([$type_ob, 'init'], $params);
         return $type_ob;
     }
 
@@ -170,7 +171,7 @@ class Horde_Core_Form
         }
     }
 
-    public function add($varName, $type, $humanName, $required, $readonly = false, $description = null, $params = array())
+    public function add($varName, $type, $humanName, $required, $readonly = false, $description = null, $params = [])
     {
         return $this->addVariable($humanName, $varName, $type, $required, $readonly, $description, $params);
     }
@@ -178,31 +179,55 @@ class Horde_Core_Form
     /**
      * TODO
      */
-    public function addVariable($humanName, $varName, $type, $required,
-                                $readonly = false, $description = null,
-                                $params = array())
-    {
-        return $this->insertVariableBefore(null, $humanName, $varName, $type,
-                                           $required, $readonly, $description,
-                                           $params);
+    public function addVariable(
+        $humanName,
+        $varName,
+        $type,
+        $required,
+        $readonly = false,
+        $description = null,
+        $params = []
+    ) {
+        return $this->insertVariableBefore(
+            null,
+            $humanName,
+            $varName,
+            $type,
+            $required,
+            $readonly,
+            $description,
+            $params
+        );
     }
 
     /**
      * TODO
      */
-    public function insertVariableBefore($before, $humanName, $varName, $type,
-                                         $required, $readonly = false,
-                                         $description = null, $params = array())
-    {
+    public function insertVariableBefore(
+        $before,
+        $humanName,
+        $varName,
+        $type,
+        $required,
+        $readonly = false,
+        $description = null,
+        $params = []
+    ) {
         $type = $this->getType($type, $params);
-        $var = new Horde_Core_Form_Variable($humanName, $varName, $type,
-                                            $required, $readonly, $description);
+        $var = new Horde_Core_Form_Variable(
+            $humanName,
+            $varName,
+            $type,
+            $required,
+            $readonly,
+            $description
+        );
 
         /* Set the form object reference in the var. */
         $var->setFormOb($this);
 
-        if ($var->getType() instanceof Horde_Core_Form_Type_Enum &&
-            count($var->getValues()) == 1) {
+        if ($var->getType() instanceof Horde_Core_Form_Type_Enum
+            && count($var->getValues()) == 1) {
             $vals = array_keys($var->getValues());
             $this->_vars->add($var->varName, $vals[0]);
             $var->_autofilled = true;
@@ -215,8 +240,8 @@ class Horde_Core_Form
             $this->_variables[$this->_currentSection][] = &$var;
         } else {
             $num = 0;
-            while (isset($this->_variables[$this->_currentSection][$num]) &&
-                   $this->_variables[$this->_currentSection][$num]->getVarName() != $before) {
+            while (isset($this->_variables[$this->_currentSection][$num])
+                   && $this->_variables[$this->_currentSection][$num]->getVarName() != $before) {
                 $num++;
             }
             if (!isset($this->_variables[$this->_currentSection][$num])) {
@@ -224,8 +249,9 @@ class Horde_Core_Form
             } else {
                 $this->_variables[$this->_currentSection] = array_merge(
                     array_slice($this->_variables[$this->_currentSection], 0, $num),
-                    array(&$var),
-                    array_slice($this->_variables[$this->_currentSection], $num));
+                    [&$var],
+                    array_slice($this->_variables[$this->_currentSection], $num)
+                );
             }
         }
 
@@ -251,12 +277,13 @@ class Horde_Core_Form
     {
         foreach (array_keys($this->_variables) as $section) {
             foreach (array_keys($this->_variables[$section]) as $i) {
-                if ((is_a($var, 'Horde_Core_Form_Variable') && $this->_variables[$section][$i] === $var) ||
-                    ($this->_variables[$section][$i]->getVarName() == $var)) {
+                if ((is_a($var, 'Horde_Core_Form_Variable') && $this->_variables[$section][$i] === $var)
+                    || ($this->_variables[$section][$i]->getVarName() == $var)) {
                     // Slice out the variable to be removed.
                     $this->_variables[$this->_currentSection] = array_merge(
                         array_slice($this->_variables[$this->_currentSection], 0, $i),
-                        array_slice($this->_variables[$this->_currentSection], $i + 1));
+                        array_slice($this->_variables[$this->_currentSection], $i + 1)
+                    );
 
                     return true;
                 }
@@ -269,7 +296,7 @@ class Horde_Core_Form
     /**
      * TODO
      */
-    public function addHidden($varName, $type, $required, $params = array())
+    public function addHidden($varName, $type, $required, $params = [])
     {
         $type = $this->getType($type, $params);
         $var = new Horde_Core_Form_Variable('', $varName, $type, $required);
@@ -281,7 +308,7 @@ class Horde_Core_Form
     public function getVariables($flat = true, $withHidden = false)
     {
         if ($flat) {
-            $vars = array();
+            $vars = [];
             foreach ($this->_variables as $section) {
                 foreach ($section as $var) {
                     $vars[] = $var;
@@ -403,7 +430,7 @@ class Horde_Core_Form
 
     public function clearValidation()
     {
-        $this->_errors = array();
+        $this->_errors = [];
     }
 
     public function getError($var)
@@ -413,7 +440,7 @@ class Horde_Core_Form
         } else {
             $name = $var;
         }
-        return isset($this->_errors[$name]) ? $this->_errors[$name] : null;
+        return $this->_errors[$name] ?? null;
     }
 
     public function setError($var, $message)
@@ -482,13 +509,13 @@ class Horde_Core_Form
             } else {
                 if (Horde_Array::getArrayParts($var->getVarName(), $base, $keys)) {
                     if (!isset($info[$base])) {
-                        $info[$base] = array();
+                        $info[$base] = [];
                     }
                     $pointer = &$info[$base];
                     while (count($keys)) {
                         $key = array_shift($keys);
                         if (!isset($pointer[$key])) {
-                            $pointer[$key] = array();
+                            $pointer[$key] = [];
                         }
                         $pointer = &$pointer[$key];
                     }
@@ -545,8 +572,8 @@ class Horde_Core_Form
              * submitted if old value and new value differ. */
             if ($var->getOption('trackchange')) {
                 $varname = $var->getVarName();
-                if (!is_null($this->_vars->get('formname')) &&
-                    $this->_vars->get($varname) != $this->_vars->get('__old_' . $varname)) {
+                if (!is_null($this->_vars->get('formname'))
+                    && $this->_vars->get($varname) != $this->_vars->get('__old_' . $varname)) {
                     $this->_submitted = false;
                 }
             }

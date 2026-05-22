@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Choose one from a list of values
  */
@@ -10,7 +11,7 @@ class Horde_Core_Form_Type_Enum extends Horde_Core_Form_Type
      * @type stringlist
      * @var array
      */
-    protected $_values = array();
+    protected $_values = [];
 
     /**
      * Initial prompt value, if any
@@ -29,8 +30,8 @@ class Horde_Core_Form_Type_Enum extends Horde_Core_Form_Type
             return false;
         }
 
-        if (count($this->_values) == 0 || isset($this->_values[$value]) ||
-            ($this->_prompt && empty($value))) {
+        if (count($this->_values) == 0 || isset($this->_values[$value])
+            || ($this->_prompt && empty($value))) {
             return true;
         }
 
