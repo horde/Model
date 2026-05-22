@@ -1,16 +1,17 @@
 <?php
+
 /**
  * Number
  */
-class Horde_Form_Type_Number extends Horde_Form_Type {
-
+class Horde_Form_Type_Number extends Horde_Form_Type
+{
     /**
      */
     protected $_fraction;
 
     public function isValid($var, $vars, $value, $message)
     {
-        if ($var->required && empty($value) && ((string)(double)$value !== $value)) {
+        if ($var->required && empty($value) && ((string) (float) $value !== $value)) {
             $message = Horde_Model_Translation::t("This field is required.");
             return false;
         } elseif (empty($value)) {
@@ -31,7 +32,7 @@ class Horde_Form_Type_Number extends Horde_Form_Type {
     public function getInfo($vars, $var, $info)
     {
         $value = $vars->get($var->name);
-        $linfo = Horde_Nls::getLocaleInfo();
+        $linfo = (new Horde\Nls\Nls())->getLocaleInfo();
         $value = str_replace($linfo['mon_thousands_sep'], '', $value);
         $info = str_replace($linfo['mon_decimal_point'], '.', $value);
     }
@@ -46,7 +47,7 @@ class Horde_Form_Type_Number extends Horde_Form_Type {
         }
 
         /* Get current locale information. */
-        $linfo = Horde_Nls::getLocaleInfo();
+        $linfo = (new Horde\Nls\Nls())->getLocaleInfo();
 
         /* Build the pattern. */
         $pattern = '(-)?';

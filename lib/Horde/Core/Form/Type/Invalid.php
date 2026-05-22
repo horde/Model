@@ -1,14 +1,15 @@
 <?php
-class Horde_Form_Type_invalid extends Horde_Form_Type {
 
-    var $message;
+class Horde_Form_Type_invalid extends Horde_Form_Type
+{
+    public $message;
 
-    function init($message)
+    public function init($message)
     {
         $this->message = $message;
     }
 
-    function isValid($var, $vars, $value, $message)
+    public function isValid($var, $vars, $value, $message)
     {
         return false;
     }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * An on/off value
  */

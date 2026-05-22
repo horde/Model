@@ -1,10 +1,11 @@
 <?php
+
 /**
  * The Horde_Form_VarRenderer:: class provides base functionality for
  * other Horde_Form elements.
  *
- * Copyright 2003-2017 Horde LLC (http://www.horde.org/)
- * Copyright 2005-2007 Matt Warden <mwarden@gmail.com>
+ * Copyright 2003-2026 Horde LLC (http://www.horde.org/)
+ * Copyright 2005-2026 Matt Warden <mwarden@gmail.com>
  *
  * See the enclosed file COPYING for license information (LGPL).
  *
@@ -29,9 +30,9 @@ class Horde_Form_VarRenderer
         } else {
             $state = 'Display';
         }
-        $method = "_renderVar${state}_" . str_replace('Horde_Form_Type_', '', get_class($var->type));
+        $method = "_renderVar{$state}_" . str_replace('Horde_Form_Type_', '', get_class($var->type));
         if (!method_exists($this, $method)) {
-            $method = "_renderVar${state}Default";
+            $method = "_renderVar{$state}Default";
         }
         return $this->$method($form, $var, $vars);
     }

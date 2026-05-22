@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Date
  */
@@ -27,21 +28,28 @@ class Horde_Core_Form_Type_Date extends Horde_Core_Form_Type
             return '';
         }
 
-        $diffdays = Date_Calc::dateDiff(date('j', $timestamp),
-                                        date('n', $timestamp),
-                                        date('Y', $timestamp),
-                                        date('j'), date('n'), date('Y'));
+        $diffdays = Date_Calc::dateDiff(
+            date('j', $timestamp),
+            date('n', $timestamp),
+            date('Y', $timestamp),
+            date('j'),
+            date('n'),
+            date('Y')
+        );
 
         /* An error occured. */
         if ($diffdays == -1) {
             return;
         }
 
-        $ago = $diffdays * Date_Calc::compareDates(date('j', $timestamp),
-                                                   date('n', $timestamp),
-                                                   date('Y', $timestamp),
-                                                   date('j'), date('n'),
-                                                   date('Y'));
+        $ago = $diffdays * Date_Calc::compareDates(
+            date('j', $timestamp),
+            date('n', $timestamp),
+            date('Y', $timestamp),
+            date('j'),
+            date('n'),
+            date('Y')
+        );
         if ($ago < -1) {
             return sprintf(Horde_Model_Translation::t(" (%s days ago)"), $diffdays);
         } elseif ($ago == -1) {
@@ -61,7 +69,7 @@ class Horde_Core_Form_Type_Date extends Horde_Core_Form_Type
             $format = $this->_format;
         }
         if (!empty($timestamp)) {
-            return \Horde\Date\Format::formatDate($timestamp, $format, $GLOBALS['language'] ?? 'en_US') . ($showago ? self::getAgo($timestamp) : '');
+            return Horde\Date\Format::formatDate($timestamp, $format, $GLOBALS['language'] ?? 'en_US') . ($showago ? self::getAgo($timestamp) : '');
         } else {
             return '';
         }

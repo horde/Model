@@ -1,12 +1,13 @@
 <?php
+
 /**
  * Time
  */
-class Horde_Form_Type_Time extends Horde_Form_Type {
-
+class Horde_Form_Type_Time extends Horde_Form_Type
+{
     public function isValid($var, $vars, $value, $message)
     {
-        if ($var->required && empty($value) && ((string)(double)$value !== $value)) {
+        if ($var->required && empty($value) && ((string) (float) $value !== $value)) {
             $message = Horde_Model_Translation::t("This field is required.");
             return false;
         }

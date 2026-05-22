@@ -1,4 +1,5 @@
 <?php
+
 class Horde_Core_Form_Type_MultiEnum extends Horde_Form_Type_Enum
 {
     public function isValid($var, $vars, $value, $message)
@@ -12,7 +13,7 @@ class Horde_Core_Form_Type_MultiEnum extends Horde_Form_Type_Enum
             return true;
         }
 
-        if (empty($value) && ((string)(int)$value !== $value)) {
+        if (empty($value) && ((string) (int) $value !== $value)) {
             if ($var->required) {
                 $message = Horde_Model_Translation::t("This field is required.");
                 return false;

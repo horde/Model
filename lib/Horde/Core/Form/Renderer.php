@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package Form
  */
@@ -7,8 +8,8 @@
  * The Horde_Core_Form_Renderer class provides HTML and other renderings of
  * forms for the Horde_Core_Form package.
  *
- * Copyright 2001-2007 Robert E. Coyle <robertecoyle@hotmail.com>
- * Copyright 2005-2007 Matt Warden <mwarden@gmail.com>
+ * Copyright 2001-2026 Robert E. Coyle <robertecoyle@hotmail.com>
+ * Copyright 2005-2026 Matt Warden <mwarden@gmail.com>
  *
  * See the enclosed file COPYING for license information (LGPL). If you
  * did not receive this file, see http://www.horde.org/licenses/lgpl21.
@@ -19,16 +20,16 @@
  */
 abstract class Horde_Core_Form_Renderer
 {
-    var $_name;
-    var $_requiredLegend = false;
-    var $_helpMarker = '?';
-    var $_onLoadJS = array();
-    var $_showHeader = true;
-    var $_cols = 2;
-    var $_firstField = null;
-    var $_stripedRows = true;
+    public $_name;
+    public $_requiredLegend = false;
+    public $_helpMarker = '?';
+    public $_onLoadJS = [];
+    public $_showHeader = true;
+    public $_cols = 2;
+    public $_firstField = null;
+    public $_stripedRows = true;
 
-    protected $_submit = array();
+    protected $_submit = [];
     protected $_reset = false;
 
     /**
@@ -38,7 +39,7 @@ abstract class Horde_Core_Form_Renderer
      *
      * @var boolean
      */
-    var $_encodeTitle = true;
+    public $_encodeTitle = true;
 
     /**
      * Construct a new Horde_Form_Renderer::.
@@ -47,7 +48,7 @@ abstract class Horde_Core_Form_Renderer
      *                       Possible keys:
      *                       - 'encode_title': @see $_encodeTitle
      */
-    function __construct($params = array())
+    public function __construct($params = [])
     {
         if (isset($params['encode_title'])) {
             $this->encodeTitle($params['encode_title']);
@@ -60,10 +61,10 @@ abstract class Horde_Core_Form_Renderer
     {
         if ($submit === true || is_null($submit) || empty($submit)) {
             /* Default to 'Submit'. */
-            $submit = array(Horde_Model_Translation::t("Submit"));
+            $submit = [Horde_Model_Translation::t("Submit")];
         } elseif (!is_array($submit)) {
             /* Default to array if not passed. */
-            $submit = array($submit);
+            $submit = [$submit];
         }
         /* Only if $reset is strictly true insert default 'Reset'. */
         if ($reset === true) {
@@ -79,7 +80,7 @@ abstract class Horde_Core_Form_Renderer
     public function addButtons($buttons)
     {
         if (!is_array($buttons)) {
-            $buttons = array($buttons);
+            $buttons = [$buttons];
         }
 
         $this->_submit = array_merge($this->_submit, $buttons);
@@ -100,7 +101,7 @@ abstract class Horde_Core_Form_Renderer
      *
      * @return boolean  Whether the form title should be encoded.
      */
-    function encodeTitle($encode = null)
+    public function encodeTitle($encode = null)
     {
         if (!is_null($encode)) {
             $this->_encodeTitle = $encode;
