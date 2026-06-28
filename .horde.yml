@@ -13,10 +13,10 @@ authors:
     role: lead
     active: true
 version:
-  release: 1.0.0alpha1
+  release: 1.0.0
   api: 1.0.0
 state:
-  release: alpha
+  release: stable
   api: alpha
 license:
   identifier: LGP-2.1
