@@ -7,8 +7,7 @@ list: horde
 type: library
 homepage: http://www.horde.org/libraries/model
 authors:
-  -
-    name: Horde LLC
+  - name: Horde LLC
     user: tbd
     email: dev@horde.org
     role: lead
@@ -32,3 +31,8 @@ dependencies:
       horde/test: ^3
 keywords: []
 vendor: horde
+ci-platform:
+  '8.6':
+    - php: ^7 || ^8
+ci-platform-flags:
+  needs_installer_plugin: false
